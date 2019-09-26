@@ -12,12 +12,13 @@ public class Text_Dead : MonoBehaviour
     public float time_end = 5;
     void Start()
     {
-
+        end.text = text_end; //какой именно текст выводим на экран
     }
 
     void Update()
     {
-        end.text = text_end; //какой именно текст выводим на экран
+        //1101: незачем менять каждый кадр текст на одно и тоже.
+        //end.text = text_end; //какой именно текст выводим на экран
 
         if (game_end == true) //если конец игры правда
         {
