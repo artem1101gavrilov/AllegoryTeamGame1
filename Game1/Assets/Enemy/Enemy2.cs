@@ -12,22 +12,27 @@ public class Enemy2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         if (dir==0) //присваиваем времени число дистанции и начинаем отсчитывать
         {
             time = distance;
             dir = 1;
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //1101: Вызывалось лишь однажды, нет смысла каждый раз проверять
+        /*if (dir==0) //присваиваем времени число дистанции и начинаем отсчитывать
+        {
+            time = distance;
+            dir = 1;
+        }*/
         if (time >= distance) //больше этого числа нельзя, поэтому меняем направление объекта и отсчитываем время назад
         {
             dir = 1;
         }
-        if (time <= 0) //меньше этого числа нельзя, поэтому меняем направление объекта и отсчитываем время вперед
+        else if (time <= 0) //меньше этого числа нельзя, поэтому меняем направление объекта и отсчитываем время вперед
         {
             dir = 2;
         }
@@ -36,7 +41,7 @@ public class Enemy2 : MonoBehaviour
             time -= Time.deltaTime;
             transform.Translate(Vector2.left * Time.deltaTime);
         }
-        if (dir == 2) //направляем объект вправо и отсчитываем время до определенного числа
+        else //направляем объект вправо и отсчитываем время до определенного числа
         {
             time += Time.deltaTime;
             transform.Translate(Vector2.right * Time.deltaTime);
