@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 	Animator _animator;
 	Rigidbody2D rigidbody2d;
 	bool isGround; //Находится ли наш персонаж на земле
+	
     // Start is called before the first frame update
     void Start()
     {

@@ -313,7 +313,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "             \u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435:\nWASD
+  m_Text: "             \u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435:\nAD
     - \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435\nSpace - \u043F\u0440\u044B\u0436\u043E\u043A\n"
 --- !u!222 &354833046
 CanvasRenderer:
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249340571}
+      - m_Target: {fileID: 1345581235}
         m_MethodName: ClickAutors
         m_Mode: 1
         m_Arguments:
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249340571}
+      - m_Target: {fileID: 1345581235}
         m_MethodName: ClickControl
         m_Mode: 1
         m_Arguments:
@@ -1114,7 +1114,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249340570}
-  - component: {fileID: 1249340571}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1147,21 +1146,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1249340571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249340569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23b75cae79a9f6141922499b8418d5da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenu: {fileID: 1249340569}
-  AutorsMenu: {fileID: 1275460336}
-  ControlMenu: {fileID: 1872229936}
 --- !u!1 &1275460336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,7 +1155,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1275460337}
-  - component: {fileID: 1275460338}
   m_Layer: 5
   m_Name: AutorsMenu
   m_TagString: Untagged
@@ -1201,21 +1184,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -122}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1275460338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275460336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23b75cae79a9f6141922499b8418d5da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenu: {fileID: 1249340569}
-  AutorsMenu: {fileID: 1275460336}
-  ControlMenu: {fileID: 1872229936}
 --- !u!1 &1334459499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,7 +1263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1275460338}
+      - m_Target: {fileID: 1345581235}
         m_MethodName: ClickBack
         m_Mode: 1
         m_Arguments:
@@ -1357,6 +1325,7 @@ GameObject:
   - component: {fileID: 1345581233}
   - component: {fileID: 1345581232}
   - component: {fileID: 1345581231}
+  - component: {fileID: 1345581235}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1446,6 +1415,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1345581235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345581230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b75cae79a9f6141922499b8418d5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenu: {fileID: 1249340569}
+  AutorsMenu: {fileID: 1275460336}
+  ControlMenu: {fileID: 1872229936}
 --- !u!1 &1434461437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1509,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249340571}
+      - m_Target: {fileID: 1345581235}
         m_MethodName: ClickGame
         m_Mode: 1
         m_Arguments:
@@ -1812,7 +1796,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1872229938}
+      - m_Target: {fileID: 1345581235}
         m_MethodName: ClickBack
         m_Mode: 1
         m_Arguments:
@@ -1950,7 +1934,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1872229937}
-  - component: {fileID: 1872229938}
   m_Layer: 5
   m_Name: ControlMenu
   m_TagString: Untagged
@@ -1980,21 +1963,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -122}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1872229938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872229936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23b75cae79a9f6141922499b8418d5da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenu: {fileID: 1249340569}
-  AutorsMenu: {fileID: 1275460336}
-  ControlMenu: {fileID: 1872229936}
 --- !u!1 &1890115896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,7 +2275,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249340571}
+      - m_Target: {fileID: 1345581235}
         m_MethodName: ClickExit
         m_Mode: 1
         m_Arguments:
