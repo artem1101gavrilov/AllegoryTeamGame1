@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
 	/*
 	1101: ЭТОТ СКРИПТ БОЛЬШЕ НЕ НУЖЕН
+	xcsn3: КАК ЖАЛЬ(((((
 	*/
 	
     //public Text_Dead text;
