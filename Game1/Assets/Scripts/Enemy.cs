@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Text_Dead text;
-    public GameObject text_end;
+	/*
+	1101: ЭТОТ СКРИПТ БОЛЬШЕ НЕ НУЖЕН
+	*/
+	
+    //public Text_Dead text;
+    //public GameObject text_end;
     void Start()
     {
 
@@ -18,10 +22,10 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player")) //если объект столкнулся с игроком
+        /*if (other.gameObject.CompareTag("Player")) //если объект столкнулся с игроком
         {
                 text_end.SetActive(true);  //то активируем объект, который будет выводить текст на экран
                 text.game_end = true; //и посылаем команду другому скрипту, что конец игры это правда
-        }
+        }*/
     }
 }

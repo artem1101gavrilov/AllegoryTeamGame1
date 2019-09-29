@@ -51,5 +51,9 @@ public class PlayerController : MonoBehaviour
             isGround = true;
 			rigidbody2d.velocity = new Vector2(0, 0);
         }
+		else //Здесь нужен else if с проверкой тега противника. 
+		{
+			EventManager.TriggerEvent("Loser"); //Подаем событие, что мы проиграли
+		}
     }
 }
