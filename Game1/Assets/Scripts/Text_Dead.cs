@@ -7,7 +7,6 @@ using UnityEngine.Events;
 
 public class Text_Dead : MonoBehaviour
 {
-    public bool game_end = false;
     public string text_end;
     public Text end;
     public float time_end = 5;
@@ -16,6 +15,7 @@ public class Text_Dead : MonoBehaviour
 	
 	void Awake()
     {
+		//Создаем нашему действию определенную функцию при срабатывании событии - ActiveText
         someListener = new UnityAction(ActiveText);
     }
 	
@@ -26,32 +26,20 @@ public class Text_Dead : MonoBehaviour
 	
 	void OnEnable()
     {
+		//Говорим менеджеру, что хоть получать события "Loser", выполняться будут действия someListener
         EventManager.StartListening("Loser", someListener);
     }
 
     void OnDisable()
     {
+		//Отписываемся от события при уничтожении объекта
         EventManager.StopListening("Loser", someListener);
     }
 
-    void Update()
-    {
-        //end.text = text_end; //какой именно текст выводим на экран
-
-        /*if (game_end == true) //если конец игры правда
-        {
-            time_end -= Time.deltaTime; //активация отсчета времени до перезапуска сцены
-            if (time_end <= 0) //если счетчик равен или меньше нуля
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name); //перезапускаем текущую сцену
-            }
-        }*/
-    }
-	
 	void ActiveText()
     {
         transform.GetChild(0).gameObject.SetActive(true);
-        Invoke("Restart", time_end);
+        Invoke("Restart", time_end); //Invoke - выполняет метод Restart через time_end секунд
     }
 
     void Restart()

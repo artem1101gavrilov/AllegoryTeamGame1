@@ -5,26 +5,13 @@ using System.Collections.Generic;
 
 public class EventManager : MonoBehaviour
 {
-
     private Dictionary<string, UnityEvent> eventDictionary;
 
     private static EventManager eventManager;
 
-    public static EventManager instance
-    {
-        get
-        {
-            if (!eventManager)
-            {
-                Debug.LogError("There needs to be one active EventManger script on a GameObject in your scene.");
-            }
-
-            return eventManager;
-        }
-    }
-
 	void Awake()
 	{
+		//Это реализация паттерна Singleton
 		if (eventManager == null)
         {
             eventManager = this;
@@ -34,7 +21,9 @@ public class EventManager : MonoBehaviour
             Destroy(this);
 			return;
         }
+		//создаем список событий
 		eventDictionary = new Dictionary<string, UnityEvent>();
+		//Наш объект теперь не будет удаляться при загрузке сцен
 		DontDestroyOnLoad(gameObject);
 	}
 	
@@ -42,7 +31,7 @@ public class EventManager : MonoBehaviour
     public static void StartListening(string eventName, UnityAction listener)
     {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (eventManager.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.AddListener(listener);
         }
@@ -50,7 +39,7 @@ public class EventManager : MonoBehaviour
         {
             thisEvent = new UnityEvent();
             thisEvent.AddListener(listener);
-            instance.eventDictionary.Add(eventName, thisEvent);
+            eventManager.eventDictionary.Add(eventName, thisEvent);
         }
     }
 
@@ -58,7 +47,7 @@ public class EventManager : MonoBehaviour
     {
         if (eventManager == null) return;
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (eventManager.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.RemoveListener(listener);
         }
@@ -67,7 +56,7 @@ public class EventManager : MonoBehaviour
     public static void TriggerEvent(string eventName)
     {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        if (eventManager.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.Invoke();
         }

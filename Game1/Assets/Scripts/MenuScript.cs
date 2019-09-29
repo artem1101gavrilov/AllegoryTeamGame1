@@ -8,12 +8,6 @@ public class MenuScript : MonoBehaviour
     public GameObject MainMenu;
     public GameObject AutorsMenu;
     public GameObject ControlMenu;
-	
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void ClickGame()
     {
@@ -34,7 +28,7 @@ public class MenuScript : MonoBehaviour
 	
     public void ClickExit()
     {
-        
+        Application.Quit();
     }
 	
     public void ClickBack()

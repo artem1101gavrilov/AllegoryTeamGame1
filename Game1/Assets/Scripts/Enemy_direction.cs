@@ -21,7 +21,7 @@ public class Enemy_direction : MonoBehaviour
 
         if (Mathf.Abs(direction) < 20)
         {
-            Vector2 pos = transform.position;
+            Vector3 pos = transform.position;
             pos.x += Mathf.Sign(direction) * speed * Time.deltaTime;
             transform.position = pos;
         }
